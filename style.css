@@ -1,20 +1,25 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
 }
-
-body {
+body{
+    /* height: 100vh; */
+    background-color: #333;
+    max-height: 100vh;
+    justify-content: center;
+}
+.contQuiz {
     display: flex;
-    min-height: 100vh;
+    margin-top: 100px;   
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #333;
-    font-family: Arial, Helvetica, sans-serif;
+    display: none;
 }
 
-h1 {
+.contQuiz h1 {
     color: #FFF;
     margin: 20px 0;
 }
@@ -115,6 +120,42 @@ h1 {
 }
 .scoreArea button:hover {
     background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* -------------------------------------------- */
+
+
+.contCategoreQuiz{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    margin-top: 100px;   
+    /* background-color: red; */
+}
+
+.contCategoreQuiz h1{
+    width: 100%;
+    color: #fff;
+    margin-bottom: 50px;
+
+}
+
+.contCategoreQuiz  div{
+    width: 60%;
+    min-width: 300px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    margin: 10px;
+    color: #AAA;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.contCategoreQuiz  div:hover{
+    opacity: 0.7;
 }
 
 footer {

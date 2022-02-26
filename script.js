@@ -1,15 +1,32 @@
 let currentQuestion = 0;
 let correctAnswes = 0;
 
-showQuestion();
+const categores = document.querySelectorAll('.contCategoreQuiz div');
+    
+let questionsForShow;
+
+categores.forEach(categ=> categ.addEventListener('click',()=>
+    {
+        questionsForShow = questions[categ.classList.value];
+        showQuestion();
+    })
+);
+
+
+// console.log(categore)
+
 
 document.querySelector('.scoreArea button').addEventListener('click',resetEvent);
 
 function showQuestion(){
-    if(questions[currentQuestion]){
-        let question = questions[currentQuestion];
+    
+    document.querySelector('.contCategoreQuiz').style.display='none';
+    document.querySelector('.contQuiz').style.display='flex';
+
+    if(questionsForShow[currentQuestion]){
+        let question = questionsForShow[currentQuestion];
         
-        let percentagem = Math.floor((currentQuestion/questions.length)*100);
+        let percentagem = Math.floor((currentQuestion/questionsForShow.length)*100);
         document.querySelector('.progress--bar').style.width = `${percentagem}%`;
 
         document.querySelector('.scoreArea').style.display = 'none';
@@ -38,7 +55,7 @@ function showQuestion(){
 function optionClickEvent(e){
     let clickedOption = parseInt(e.target.getAttribute('data-op'));
 
-    if(questions[currentQuestion].answer == clickedOption){
+    if(questionsForShow[currentQuestion].answer == clickedOption){
         correctAnswes++;
     }
     
@@ -48,7 +65,7 @@ function optionClickEvent(e){
 
 function finishQuiz(){
 
-    let ponts = Math.floor((correctAnswes/questions.length)*100);
+    let ponts = Math.floor((correctAnswes/questionsForShow.length)*100);
 
     if(ponts < 30){
         document.querySelector('.scoreText1').innerHTML= "Esta mau";
@@ -65,7 +82,7 @@ function finishQuiz(){
 
     document.querySelector('.scorePct').innerHTML= `Acertou ${ponts}%`;
 
-    document.querySelector('.scoreText2').innerHTML= `Você respondeu ${questions.length} questões e acertou ${correctAnswes}`;
+    document.querySelector('.scoreText2').innerHTML= `Você respondeu ${questionsForShow.length} questões e acertou ${correctAnswes}`;
 
     document.querySelector('.scoreArea').style.display = 'block';
 
@@ -75,7 +92,5 @@ function finishQuiz(){
 }
 
 function resetEvent(){
-    currentQuestion=0;
-    correctAnswes=0;
-    showQuestion();  
+    location.reload(); 
 }

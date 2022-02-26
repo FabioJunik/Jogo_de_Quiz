@@ -1,5 +1,19 @@
-let questions = [
-    {
+let questions = {
+    divers:[
+        {
+            question: 'Qual componete é considerado o cerebro do computador ?',
+            options: [
+                'Memória RAM',
+                'CPU',
+                'Placa mãe',
+                'HD'
+            ],
+            answer: 1
+        },
+    
+    ],
+    programing : [
+        {
         question: 'Em qual elemento HTML nós colocamos o javascript?',
         options: [
             'tag js',
@@ -9,6 +23,8 @@ let questions = [
         ],
         answer: 1
     },
+
+
     {
         question: 'Onde é o local certo de colocar o javascript?',
         options: [
@@ -92,4 +108,56 @@ let questions = [
         ],
         answer: 0
     },
-];
+],
+math:[
+    {
+        question: 'Qual é o resultado de 1+1 = ?',
+        options: [
+            '4',
+            '3',
+            '2',
+            '1'
+        ],
+        answer: 2
+    },
+    {
+        question: 'Uma função irracional é dada por ?',
+        options: [
+            'A operação de números com raizes',
+            'A divisão o de dois números',
+            'O quociente entre dois polinomes',
+            'Quando o valor da icognita esta dentro da raiz'
+        ],
+        answer: 3
+    },
+    {
+        question: 'Qual dos conjuntos númericos é o maior?',
+        options: [
+            'Naturais',
+            'Inteiros'
+        ],
+        answer: 1
+    },
+    {
+        question: 'Numa equação do 2° grau se Delta > 0',
+        options: [
+            'A equação tem duas raízes reais distintas',
+            'A  equação tem duas raízes reais iguais',
+            'A equação não tem raízes reais'
+        ],
+        answer: 0
+    },
+],
+history:[
+    {
+        question: 'Quando é que Angola ficou independente ?',
+        options: [
+            '11/10/1975',
+            '11/11/1975',
+            '10/10/1975',
+            '11/10/1975'
+        ],
+        answer: 1
+    },
+]
+};
